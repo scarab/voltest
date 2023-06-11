@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+    service1:
+      image: voltest
+      build:
+        dockerfile: Dockerfile
+      volumes:
+        - vol1:/var/test
+
+    nginx:
+      image: nginx:latest
+      volumes:
+        - vol1:/var/www/html
+
+volumes:
+  vol1:
